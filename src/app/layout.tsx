@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <OpenUISiteChrome contained>{children}</OpenUISiteChrome>
+        <OpenUISiteChrome title="Trip Planner" contained>{children}</OpenUISiteChrome>
         <Analytics />
       </body>
     </html>
