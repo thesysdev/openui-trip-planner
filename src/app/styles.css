@@ -10,7 +10,7 @@ body {
 }
 
 .booking-app {
-  height: 100dvh;
+  height: var(--app-height, 100dvh);
 }
 
 .thread-context {
