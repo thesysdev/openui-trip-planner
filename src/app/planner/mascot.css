@@ -22,6 +22,6 @@
 .pl-mascot--corner {
   position: fixed;
   z-index: 41;
-  top: 8px;
+  top: calc(var(--hosted-header-height, 0px) + 8px);
   left: 16px;
 }
