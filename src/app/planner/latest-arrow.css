@@ -3,7 +3,7 @@
 .pl-latest {
   position: fixed;
   z-index: 20;
-  top: 50%;
+  top: calc(50% + var(--hosted-header-height, 0px) / 2);
   right: 16px;
   display: grid;
   place-items: center;

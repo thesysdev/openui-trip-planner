@@ -33,7 +33,7 @@ html:has(.planner-page) body {
   align-items: flex-start;
   box-sizing: border-box;
   gap: var(--board-gap);
-  height: 100dvh;
+  height: calc(100dvh - var(--hosted-header-height, 0px));
   padding: var(--inset) var(--grid-right) var(--inset) var(--grid-left);
   scroll-padding-inline: var(--grid-left) var(--grid-right);
   overflow-x: auto;
@@ -352,7 +352,7 @@ html:has(.planner-page) body {
 :where(.planner-page) .hj-pill {
   position: fixed;
   z-index: 20;
-  top: 50%;
+  top: calc(50% + var(--hosted-header-height, 0px) / 2);
   left: 16px;
   transform: translateY(-50%);
   display: flex;
@@ -386,7 +386,7 @@ html:has(.planner-page) body {
 :where(.planner-page) .hj-history {
   position: fixed;
   z-index: 19;
-  top: 50%;
+  top: calc(50% + var(--hosted-header-height, 0px) / 2);
   left: 84px;
   transform: translateY(-50%);
   box-sizing: border-box;
@@ -394,7 +394,7 @@ html:has(.planner-page) body {
   flex-direction: column;
   gap: 14px;
   width: 264px;
-  max-height: calc(100dvh - 72px);
+  max-height: calc(100dvh - var(--hosted-header-height, 0px) - 72px);
   padding: 16px 12px 12px;
   border: 1px solid rgb(0 0 0 / 0.06);
   border-radius: 24px;
@@ -474,12 +474,12 @@ html:has(.planner-page) body {
     padding: 88px 20px 32px;
   }
   :where(.planner-page) .hj-pill {
-    top: 16px;
+    top: calc(var(--hosted-header-height, 0px) + 16px);
     transform: none;
     flex-direction: row;
   }
   :where(.planner-page) .hj-history {
-    top: 76px;
+    top: calc(var(--hosted-header-height, 0px) + 76px);
     left: 16px;
     transform: none;
   }

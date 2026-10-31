@@ -5,7 +5,7 @@
 :where(.planner-page) .hj-sheet-backdrop {
   position: fixed;
   z-index: 40;
-  inset: 0;
+  inset: var(--hosted-header-height, 0px) 0 0;
   display: grid;
   place-items: center;
   padding: 3vh 3vw;
@@ -17,7 +17,7 @@
   position: relative;
   box-sizing: border-box;
   width: min(1120px, 100%);
-  max-height: 94vh;
+  max-height: calc(94vh - var(--hosted-header-height, 0px));
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: none;
@@ -48,7 +48,7 @@
   display: grid;
   place-items: center;
   width: 100%;
-  max-height: 94vh;
+  max-height: calc(94vh - var(--hosted-header-height, 0px));
   transform: translateY(calc(var(--depth) * -3.2vh)) scale(calc(1 - var(--depth) * 0.05));
   transform-origin: 50% 0;
   transition:

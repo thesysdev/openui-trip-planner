@@ -2,7 +2,7 @@
 
 .pl-board {
   position: fixed;
-  inset: 0;
+  inset: var(--hosted-header-height, 0px) 0 0;
   font-family: var(--ds-font-serif);
   font-weight: 380;
   font-variation-settings: var(--ds-font-variation);
@@ -420,7 +420,7 @@
 .pl-tabs {
   position: fixed;
   z-index: 40;
-  top: 16px;
+  top: calc(var(--hosted-header-height, 0px) + 16px);
   left: 50%;
   translate: -50% 0;
   display: grid;
