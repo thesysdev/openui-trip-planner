@@ -1,6 +1,7 @@
 import OpenAI from "openai";
 import { doodleNames, doodlePlaces } from "../../../../planner/doodle-names";
 import { type ItineraryItem, tripKey } from "../../../../../lib/itinerary";
+import { modelOptions } from "../../../../../lib/model";
 import { hasAllowedOrigin } from "../../../../../lib/same-origin";
 import { findPhoto } from "../../../../../lib/photos";
 
@@ -86,7 +87,7 @@ export async function POST(request: Request) {
   const once = async () => {
     const completion = await gateway.chat.completions.create(
       {
-        model: process.env.OPENUI_MODEL || "openai/gpt-5.5",
+        ...modelOptions(),
         store: false,
         messages: [
           { role: "system", content: system(dates?.trim() ?? "", days) },
