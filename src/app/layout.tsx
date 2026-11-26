@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" data-openui-theme="light">
       <body>
         {children}
       </body>
